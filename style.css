@@ -1,0 +1,846 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400;700&family=Roboto+Slab:wght@300;400;500;700;900&family=Space+Mono:ital,wght@0,400;0,700;1,700&display=swap");
+ * {
+  padding: 0;
+  margin: 0;
+} 
+
+html,
+body {
+  background-color: #1E213F;
+  height: 100%;
+  position: relative;
+  font-size: 16px;
+}
+
+.kumbh__font {
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+.mono__font {
+  font-family: "Space Mono", monospace;
+}
+
+.roboto__font {
+  font-family: "Roboto Slab", serif;
+} 
+
+.logo {
+  position: relative;
+  top: 30px;
+}
+
+h3 {
+  text-transform: uppercase;
+  letter-spacing: 4.23px;
+  line-height: 100%;
+  font-size: 0.69rem;
+}
+
+.time_label{
+  position: relative;
+  left: 24px;
+}
+
+.wrapper {
+  position: relative;
+}
+
+
+/*-------------------------------------------------
+          svg circular ring
+---------------------------------------------------*/
+ .progress-ring {
+  -webkit-box-shadow: 0px 1px 5px 17px #292d53;
+          box-shadow: 0px 1px 5px 17px #292d53;
+  background-color: #161932;
+  border-radius: 50%;
+}
+
+.progress-ring__circle {
+  stroke: #F87070;
+  -webkit-transition: 0.35s stroke-dashoffset;
+  transition: 0.35s stroke-dashoffset;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+} 
+
+.lime__ring {
+  stroke: #70F3F8;
+}
+
+.purple__ring {
+  stroke: #D881F8;
+}
+
+ .pomodoro__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 30px;
+} */
+
+/* ---------------------------------
+    start and pause timer
+    ------------------------------*/
+ .ctrls {
+  position: relative;
+  bottom: 100px;
+  left: 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  place-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+} 
+
+/* pausing and starting timer */
+ .start__pause {
+  width: 110px;
+  background-color: inherit;
+  position: relative;
+  bottom: 230px;
+  right: 140px;
+  border: none;
+  color: #EFF1FA;
+  font-size: 0.875rem;
+  letter-spacing: 13.13px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.start__pause:hover{
+  color:  #F87070;
+}
+
+
+time {
+  font-size: 4rem;
+  color: #FFFFFF;
+  font-weight: 800;
+  position: relative;
+  bottom: 280px;
+  left: 50px;
+} 
+
+/* -------------------------------------------
+        pomodoro, short and long break selector
+        --------------------------------------*/
+.break__mode--btn {
+  outline: none;
+  border: none;
+  border-radius: 30px;
+  color: #EFF1FA;
+  height: 0;
+  opacity: 0;
+  width: 0;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+/*when input radio is checked, label must
+change background and color among other things*/
+input[type="radio"]:checked + label.break__mode__ctrls {
+  background: #F87070;
+  color: #161932;
+  border-radius: 30px;
+  opacity: 1;
+  left: 0px;
+  place-content: center;
+  top: 3px;
+  text-align: center;
+}
+
+input[type="radio"]:focus {
+  opacity: 0.8;
+}
+
+input[type="radio"]:focus ~ .fonts__label {
+  outline: 2px solid rgb(232, 231, 231);
+  outline-offset: 3px;
+  
+} 
+
+.lime__btn {
+  background-color: #70F380;
+}
+
+ .break__mode__form {
+  background-color: #161932;
+  padding: 2px 10px;
+  border-radius: 40px;
+}
+
+.break__mode__ctrls {
+  color: #EFF1FA;
+  width: 100%;
+  padding: 1em 1.25em;
+  margin: 5px auto;
+}
+
+.pomodoro__ctrls {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+} */
+
+.break__mode--btn:hover {
+  cursor: pointer;
+}
+
+.break__line {
+  width: 87.2%;
+  margin: auto;
+}
+
+.break__mode--btn:hover {
+  cursor: pointer;
+}
+
+.break__mode {
+  width: 100%;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: none;
+  position: relative;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+.menu__options--btn {
+  background: no-repeat;
+  border: none;
+  margin: auto;
+  display: block;
+}
+
+/* -------------------------------------
+  MODAL SETTINGS PAGE
+  ------------------------------------*/
+.modal__settings {
+  width: 87.2%;
+  position: absolute;
+  top: 46px;
+  left: 5%;
+  background-color: #FFFFFF;
+  height: auto;
+  visibility: hidden;
+  border-radius: 15px;
+}
+
+.modal__settings__hide {
+  visibility: visible;
+}
+
+.settings__nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: auto;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 24px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+input.timesetter,
+input.time__control {
+  position: relative;
+}
+
+.time__settings,
+.fonts,
+.colors {
+  padding: 24px 0 10px;
+  position: relative;
+}
+
+input[type="number"] {
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
+  font-size: 1rem;
+  font-weight: 600;
+  width: 110px;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+.time__incremental {
+  position: relative;
+  width: 85%;
+  margin: 14px auto;
+}
+
+.controls {
+  position: absolute;
+  right: 35px;
+  top: -1px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 8px;
+  
+  /* align-items: start; */
+}
+
+.controls__timer--btn:hover{
+  filter: grayscale(100%) brightness(40%) sepia(100%) hue-rotate(-50deg) saturate(600%) contrast(0.8);
+}
+
+
+.apply:hover{
+ background-color: #f7a6a6;
+}
+
+label {
+  width: 100%;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 0.875rem;
+ 
+}
+.timesetter__labels{
+  color: rgb(164, 164, 164);
+}
+.time__control,
+.time__control__short,
+.time__control__long {
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #d3e2f0;
+  border: none;
+}
+
+.controls__timer {
+  position: relative;
+  top: 5px;
+  left: 25px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: none;
+}
+
+.font__selection,
+.color__selection {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 30px;
+  margin: 14px auto;
+}
+
+.fonts__container,
+.color__container {
+  position: relative;
+}
+
+.fonts__list,
+.color__list {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 40px;
+  height: 40px;
+  background-color: #EFF1FA;
+  position: absolute;
+  z-index: 1;
+  border-radius: 100%;
+}
+
+.fonts,
+.colors {
+  border: none;
+}
+
+.fonts {
+  padding-bottom: 40px;
+}
+
+.fonts__label,
+.color__label {
+  z-index: 5;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  /* place-content: center; */
+  width: 40px;
+  height: 40px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.color__label {
+  opacity: 0;
+}
+
+input[type="radio"]:checked + label.fonts__label {
+  background: #161932;
+  color: #FFFFFF;
+  border-radius: 100%;
+  opacity: 1;
+}
+
+input[type="radio"]:checked + label.color__label {
+  color: black;
+  border-radius: 100%;
+  opacity: 0.8;
+}
+
+
+
+
+.orange {
+  background-color: #f87070;
+}
+
+.turquoise {
+  background-color: #70f3f8;
+}
+
+.purple {
+  background-color: #d881f8;
+}
+
+.apply {
+  width: 140px;
+  margin: auto;
+  display: block;
+  padding: 18px;
+  border-radius: 26.5px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 800;
+  background-color: #F87070;
+  color: #FFFFFF;
+  position: relative;
+  top: 26px;
+}
+
+.pomodoro__ctrls {
+  position: relative;
+}
+
+.break__mode__ctrls:hover,
+button:hover,
+input[type="radio"]:hover,
+.fonts__label:hover,
+.modal__settings:hover,
+.color__label:hover {
+  cursor: pointer;
+}
+
+.sr-only {
+  position: absolute;
+  left: -5200px;
+}
+
+
+@media screen and (min-width: 540px) and (max-width: 912px) {
+  .logo {
+    position: relative;
+    top: 30px;
+  }
+  .break__mode {
+    gap: 25px;
+  }
+  .settings__nav {
+    padding: 24px 52px;
+  }
+  .pomodoro__container {
+    gap: 55px;
+  }
+  .progress-ring {
+    -webkit-transform: scale(1.35);
+            transform: scale(1.35);
+    margin-top: 55px;
+  }
+  .ctrls {
+    bottom: 240px;
+  }
+  .apply:hover{
+    background-color: #f7a6a6;
+   }
+   
+  time {
+    font-size: 6.25rem;
+  }
+  .start__pause {
+    font-size: 1rem;
+  }
+
+  .timers{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    
+    
+  }
+  input[type="number"] {
+    width: 110px;
+  }
+
+  .timesetter__labels{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items:  flex-start;
+    /* left: 40px; */
+    gap: 10px;
+  }
+  h2{
+    position: relative;
+    right: 10px;
+  }
+
+  .time_label{
+    position: relative;
+    left: 40px;
+  }
+
+  .controls{
+    position: relative;
+    top: 22px;
+    right: 8.2em;
+  }
+
+  .time__incremental{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    left: 38px;
+  }
+  .fonts,
+  .colors {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin: auto;
+    width: 85%;
+  }
+  .font__selection,
+  .color__selection {
+    margin: 0;
+  }
+}
+
+@media screen and (min-width: 1120px) {
+  .logo {
+    position: relative;
+    top: 30px;
+  }
+
+  .break__mode__form{
+    position: relative;
+    top: 20px;
+  }
+  .progress-ring{
+    -webkit-transform: scale(1.30);
+            transform: scale(1.30);
+    position: relative;
+    top: 80px;
+  }
+  time{
+    position: relative;
+    bottom: 150px;
+  }
+  .start__pause{
+    position: relative;
+    bottom: 80px;
+    left: -100px;
+   
+  }
+
+  .menu__options {
+    margin-top: 65px;
+  }
+  .modal__settings {
+    width: 37.5%;
+    top: 146px;
+    left: 30%;
+  }
+  h2{
+    position: relative;
+    right:0px;
+  }
+  .time_label{
+    position: relative;
+    top: -5px;
+  }
+  h3{
+    position: relative;
+    top: 20px;
+
+  }
+  .font__selection,
+  .color__selection{
+    position: relative;
+    left: 97px;
+  }
+  .fonts,
+  .colors{
+   position: relative;
+   top: 20px;
+   left: 30px;
+  }
+  .fonts__container,
+  .color__container{
+    position: relative;
+    bottom: 20px;
+  }
+  
+  .timers {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 90%;
+    margin: auto;
+  }
+  .apply:hover{
+    background-color: #f7a6a6;
+   }
+   
+  label {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    gap: 20px;
+  }
+  .timesetter__labels {
+    -webkit-box-align: self-start;
+        -ms-flex-align: self-start;
+            align-items: self-start;
+  }
+  .controls {
+    right: 50px;
+    top: 38px;
+  }
+  span {
+    margin-left: -52px;
+    margin-bottom: 20px;
+  }
+  input[type="number"] {
+    padding: 14px;
+  }
+}
+
+
+@media screen and (max-width: 414px) {
+  /* h1 {
+    margin-top: 80px;
+    font-size: 2rem;
+  } */
+
+  h2{
+    position: relative;
+    right: 30px;
+  }
+  .close__menu{
+    position: relative;
+    left: 25px;
+  }
+  .break__mode__form {
+    display: inline-block;
+    padding: 0px 2px;
+    border-radius: 30px;
+   
+  }
+  .break__mode__ctrls {
+    color: #EFF1FA;
+    width: 100%;
+    padding: 1.0em 0.8em;
+    margin: 5px auto;
+  
+  }
+  
+  .break__mode {
+    gap: 22px;
+  }
+  .settings__nav {
+    padding: 24px 52px;
+  }
+  .pomodoro__container {
+    gap: 55px;
+  }
+  .logo{
+    margin-top: 20px;
+  }
+  .progress-ring {
+    -webkit-transform: scale(0.80);
+            transform: scale(0.80);
+    margin-top: 5px auto;
+  }
+  .menu__options--btn{
+    margin-bottom: 100px;
+  }
+  .ctrls {
+    bottom: 240px;
+  }
+  time {
+    position: relative;
+    bottom: 250px;
+    font-size: 3.25rem;
+  }
+
+  .time_minutes{
+    position: relative;
+    left: 0px;
+  }
+
+  .time__incremental {
+    position: relative;
+    width: 85%;
+    margin: 14px auto;
+    display: flex;
+    flex-direction: row;
+  
+  }
+  
+  .timers{
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+  }
+
+  .controls{
+  position: absolute;
+  top: 5px;
+  left: 180px;
+  bottom: 100px;
+  transform: translate(-50%)
+  }
+
+  .controls__timer{
+    position: relative;
+    bottom: 27px;
+    left: 2.5em;
+  }
+
+  .time_label{
+    position: relative;
+    left: 100px;
+  }
+
+  .timesetter__labels{
+    position: relative;
+    top: 10px;
+    right: 50px;
+    
+  }
+
+  .time__control,
+.time__control__short,
+.time__control__long{
+position: relative;
+left: 50px;
+
+}
+
+  .start__pause {
+    position: relative;
+    right: 70px;
+    bottom: 200px;
+    font-size: 1rem;
+  }
+  .fonts,
+  .colors {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin: auto;
+    width: 85%;
+    gap: 20px;
+  }
+  .font__selection,
+  .color__selection {
+    margin: 0;
+  }
+  .apply:hover{
+    background-color: #f7a6a6;
+   }
+   
+
+}
+
